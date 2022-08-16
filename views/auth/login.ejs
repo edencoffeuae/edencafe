@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../parts/head') %>
+
+    <body style="overflow-x:hidden ;width: 100%;">
+        <%- include('../parts/nav') %>
+        <%- include('../parts/sidebar') %>
+            <section class="container-fluid loginPageContainer " style="width:100% ;">
+                <Form class="container login container col-12" action="/login" method="post">
+                    <% if(authError) { %>
+                        <div class="form-group">
+                            <p class="alert alert-dark Error-danger">
+                                <%= authError  %> 
+                            </p>
+                        </div>
+                    <% } %> 
+                    <div class="title">
+                        <h1 class="black">
+                            <em>Login</em>
+                        </h1>
+                    </div>
+                    <div class="form-group col-lg-8 col-xl-8 col-md-8 col-sm-8" style="display: flex;flex-direction: column;align-items: center;">
+                        <label for="exampleInputEmail1">Email :</label>
+                        <input type="email" class="form-control col-sm-12" style="width: 80% ;" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                      </div>
+                      <div class="form-group col-lg-8 col-xl-8 col-md-8 col-sm-8" style="display: flex;flex-direction: column;align-items: center;">
+                        <label for="exampleInputEmail1">Password :</label>
+                        <input type="password" class="form-control col-sm-12" style="width: 80% ;" id="exampleInputPassword1" aria-describedby="emailHelp" name="password">
+                      </div>
+                      <button type="submit" class="btn btn-primary col-6">Submit</button>
+                      <a href="/register" class="btn btn-outline-secondary col-6 link-register">create account</a>
+                </Form>
+            </section>
+        <%- include('../parts/footer') %>
+        <%- include('../parts/scriptTags') %>
+    </body>
+
+</html>

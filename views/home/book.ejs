@@ -1,0 +1,117 @@
+<section class="box-book container col-12" id="book">
+    <div class="title col-12">
+        <h1 class="">
+            <em>
+                book a table
+            </em>
+        </h1>
+    </div>
+    <form class="d-flex col-12" action="/book-table" method="post" >
+        <div class="form-group col-xl-5 col-lg-5 col-md-6 col-sm-12">
+            <label for="exampleInputEmail1">First Name</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="firstname" min="3" required>
+        </div>
+        <div class="form-group col-xl-5 col-lg-5 col-md-6 col-sm-12">
+            <label for="exampleInputPassword1">last name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="lastname" min="3" required>
+        </div>
+        <div class="form-group col-xl-5 col-lg-5 col-md-6 col-sm-12">
+            <label for="exampleInputEmail1">Email</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" min="7" required>
+        </div>
+        <div class="form-group col-xl-5 col-lg-5 col-md-6 col-sm-12">
+            <label for="exampleInputPassword1">phone</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" name="phone" required min="7">
+        </div>
+        <div class="form-group col-12 reason-box">
+            <label for="exampleInputPassword1">What is the reason for booking?</label>
+            <input name="reason" class="form-control col-12" style="height: 50px ;" required/>
+            
+        </div>
+        <div class="col-12 details">
+            <div class="form-group col-lg-3 col-xl-3 col-md-6 col-sm-12">
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="form-group col-lg-3 col-xl-3 col-md-3 col-sm-6">
+                <select name="time" id="time" required>
+                    <option value="10:00 am">10:00 am </option>
+                    <option value="10:30 am">10:30 am</option>
+                    <option value="11:00 am">11:00 am</option>
+                    <option value="11:30 am">11:30 am</option>
+                    <option value="12:00 pm">12:00 pm</option>
+                    <option value="12:30 pm">12:30 pm</option>
+                    <option value="1:00 pm">1:00 pm</option>
+                    <option value="1:30 pm">1:30 pm</option>
+                    <option value="2:00 pm">2:00 pm</option>
+                    <option value="2:30 pm">2:30 pm</option>
+                    <option value="3:00 pm">3:00 pm</option>
+                    <option value="3:30 pm">3:30 pm</option>
+                    <option value="4:00 pm">4:00 pm</option>
+                    <option value="4:30 pm">4:30 pm</option>
+                    <option value="5:00 pm">5:00 pm</option>
+                    <option value="5:30 pm">5:30 pm</option>
+                    <option value="6:00 pm">6:00 pm</option>
+                    <option value="6:30 pm">6:30 pm</option>
+                    <option value="7:00 pm">7:00 pm</option>
+                    <option value="7:30 pm">7:30 pm</option>
+                    <option value="8:00 pm">8:00 pm</option>
+                    <option value="8:30 pm">8:30 pm</option>
+                    <option value="9:00 pm">9:00 pm</option>
+                    <option value="9:30 pm">9:30 pm</option>
+                    <option value="10:00 pm">10:00 pm</option>
+                    <option value="10:30 pm">10:30 pm</option>
+                </select>
+            </div>
+            <div class="form-group col-lg-3 col-xl-3 col-md-3 col-sm-6">
+                <select name="persons" id="persons" required>
+                    <option value="1 Person">Persons*</option>
+                    <option value="1 Person">1 Person</option>
+                    <option value="2 Person">2 Persons</option>
+                    <option value="3 Person">3 Persons</option>
+                    <option value="4 Person">4 Persons</option>
+                    <option value="5 Person">5 Persons</option>
+                    <option value="6 Person">6 Persons</option>
+                    <option value="7 Person">7 Persons</option>
+                    <option value="8 Person">8 Persons</option>
+                    <option value="9 Person">9 Persons</option>
+                    <option value="10 Person">10 Persons</option>
+                    <option value="11 Person">11 Person</option>
+                    <option value="12 Person">12 Person</option>
+                    <option value="13 Person">13 Person</option>
+                    <option value="14 Person">14 Person</option>
+                    <option value="15 Person">15 Person</option>
+                    <option value="16 Person">16 Person</option>
+                    <option value="17 Person">17 Person</option>
+                    <option value="18 Person">18 Person</option>
+                    <option value="19 Person">19 Person</option>
+                    <option value="20 Person">20 Person</option>
+                    <option value="21 Person">21 Person</option>
+                    <option value="22 Person">22 Person</option>
+                    <option value="23 Person">23 Person</option>
+                    <option value="24 Person">24 Person</option>
+                    <option value="25 Person">25 Person</option>
+                    <option value="26 Person">26 Person</option>
+                    <option value="27 Person">27 Person</option>
+                    <option value="28 Person">28 Person</option>
+                    <option value="29 Person">29 Person</option>
+                    <option value="30 Person">30 Person</option>
+                    <option value="31 Person">31 Person</option>
+                    <option value="32 Person">32 Person</option>
+                    <option value="33 Person">33 Person</option>
+                    <option value="34 Person">34 Person</option>
+                    <option value="35 Person">35 Person</option>
+                    <option value="36 Person">36 Person</option>
+                    <option value="37 Person">37 Person</option>
+                    <option value="38 Person">38 Person</option>
+                    <option value="39 Person">39 Person</option>
+                    <option value="40 Person">40 Person</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-12 d-flex parent-button">
+            <button class="btn btn-outline-primary" type="submit">
+                Book
+            </button>
+        </div>
+    </form>
+</section>

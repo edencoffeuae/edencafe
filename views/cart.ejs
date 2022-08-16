@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('parts/head') %>
+
+    <body>
+        <section class="container-fluid cart-parent">
+            <%- include('parts/nav',{isUser:isUser,isAdmin:isAdmin}) %>
+                <%- include('parts/sidebar',{isUser:isUser,isAdmin:isAdmin}) %>
+                    <div class="container col-12 cart">
+                        <form class="d-flex col-12">
+                            <% let price = 0  %> 
+                            <% if(items.length !== 0){ %>
+                                <% for(let item of items){ %> 
+                                    <div class="container d-flex item col-12 col-xl-8 col-lg-8">
+                                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 d-flex parent-img">
+                                            <img src="/<%= item.image  %>" class="col-12" alt="" srcset="">
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-6 details">
+                                            <h2 class="arabic"><em class="arabic"><%= item.name  %> </em></h2>
+                                            <h2><em><%= item.desc  %></em></h2>
+                                            <p>price : <span><em><%= item.price  %></em></span> DHS</p>
+                                        </div>
+                                        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-6 qua-parent">
+                                            <h1><em>quantity :</em></h1>
+                                            <div class="qua d-flex col-12">
+                                                <h1 class="col-4"><em><%= item.amount  %></em></h1>
+                                            </div>
+                                            <div class="important col-12">
+                                                <button class="col-12 btn-outline-dark" formaction="add-cart/delete-item-cart/<%= item.userId  %>/<%= item.productId  %>"
+                                                    formmethod="post">delete</button>
+                                                <p><span><em>important</em></span> PleaseTransfer money until you receive the
+                                                    order</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <% price = Number(price) + Number(item.price) %> 
+                                    <% } %> 
+
+                                <% }else{ %>
+                                    <p class="alert alert-danger center p-5 mt-5" style="font-size: 25px; width: 100% ;text-align: center ;text-transform: capitalize;">
+                                        Not Food in cart
+                                    </p>
+                                    <% } %>   
+                        </form>
+                        <% if(items.length !== 0){ %>
+                            <form action="" class="d-flex col-12" style="padding-top:0px ;">
+                                <div class="checkout col-12 col-xl-8 col-lg-8">
+                                    <div class="title">
+                                        <h1 class="black"><em>Checkout</em></h1>
+                                    </div>
+                                    <div class="col-12 d-flex parent">
+                                        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12 parent-details">
+                                            <p class="col-12 important">
+                                                <span><em>important</em></span>
+                                                 PleaseTransfer money until you receive theorder
+                                            </p>
+                                            <p class="col-12 important">
+                                                <span><em>Bank Account :</em></span>
+                                                 AE810570000011127491016
+                                            </p>
+                                            <p class="col-12 important">
+                                                <span><em>Total Price :</em></span>
+                                                 <%= price  %>  DHS
+                                            </p>
+                                        </div>
+                                        <div class="col-xl-6 col-lg-6 col-md-8 col-sm-12">
+                                            <div class="form-group  col-12">
+                                                <label for="exampleInputEmail1">address :</label>
+                                                <input type="text" class="form-control col-lg-11 col-xl-11 col-md-11 col-sm-11" id="exampleInputEmail1" aria-describedby="emailHelp" name="address" placeholder="Write Your Address" required>
+                                                <label for="exampleInputEmail1">phone :</label>
+                                                <input type="text" class="form-control col-lg-11 col-xl-11 col-md-11 col-sm-11" id="exampleInputEmail1" aria-describedby="emailHelp" name="phone" placeholder="Write Your phone" required min="8">
+                                                <div class="col-12 mt-3 parent-btn">
+                                                    <button class="checkout-btn col-8 btn btn-outline-secondary" formaction="checkout" formmethod="post">checkout</button>
+                                                </div>
+                                              </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <% } %>  
+                    </div>
+        </section>
+        <%- include('parts/footer') %>
+            <%- include('parts/scriptTags') %>
+    </body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../parts/head') %>
+
+    <body>
+        <%- include('../parts/nav') %>
+            <%- include('../parts/sidebar') %>
+                <section class="container-fluid col-12 registerPageContainer">
+                    <Form class="container register col-8 d-flex" action="/register" method="post">
+
+                        <div class="title">
+                            <h1 class="black">
+                                <em>Register</em>
+                            </h1>
+                        </div>
+                        <% if(registerError){ %>
+                          <p class="alert alert-danger col-8 center" style="text-align:center ;font-size: 20px;text-transform: capitalize;"><%= registerError  %> </p>
+                        <% } %>  
+                        <div class="form-group col-lg-5 col-xl-5 col-md-5 col-sm-10">
+                            <label for="exampleInputEmail1">First Name :</label>
+                            <input type="text" class="form-control col-12" id="exampleInputEmail1" aria-describedby="emailHelp" name="firstname" min="3" required> 
+                          </div>
+                          <div class="form-group col-lg-5 col-xl-5 col-md-5 col-sm-10">
+                            <label for="exampleInputEmail1">Last Name :</label>
+                            <input type="text" class="form-control col-12" id="exampleInputEmail1" aria-describedby="emailHelp" name="lastname"  min="3" required>
+                          </div>
+                        <div class="form-group col-lg-5 col-xl-5 col-md-5 col-sm-10">
+                            <label for="exampleInputEmail1">Email :</label>
+                            <input type="email" class="form-control col-12" id="exampleInputEmail1" aria-describedby="emailHelp" name="email"  min="7" required>
+                          </div>
+                          <div class="form-group col-lg-5 col-xl-5 col-md-5 col-sm-10">
+                            <label for="exampleInputEmail1">Password :</label>
+                            <input type="password" class="form-control col-12" id="exampleInputEmail1" aria-describedby="emailHelp" name="password"  min="5" required>
+                          </div>
+                          <div class="form-group col-lg-5 col-xl-5 col-md-5 col-sm-10">
+                            <label for="exampleInputEmail1">Re Password :</label>
+                            <input type="password" class="form-control col-12" id="exampleInputEmail1" aria-describedby="emailHelp" name="rePassword"  min="5" required>
+                          </div>
+                          <div class="buttons col-lg-5 col-xl-5 col-md-5 col-sm-10">
+                            <button type="submit" class="btn btn-primary col-5">Create</button>
+                            <a href="/login" class="btn btn-outline-secondary col-5 link-login">Login</a>
+                          </div>
+                    </Form>
+                </section>
+
+                <%- include('../parts/footer') %>
+                    <%- include('../parts/scriptTags') %>
+    </body>
+
+</html>

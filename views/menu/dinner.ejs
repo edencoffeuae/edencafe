@@ -1,0 +1,36 @@
+<div class="main col-12" id="dinner">
+    <div class="section-title">
+        <h2>dinner</h2>
+    </div>
+    <div class="menus container">
+        <div class="menu-column col-12 d-flex dinner">
+            <% for(let food of dinner){ %>
+                <div class="single-menu col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <form action="/add-cart/<%= food._id  %>" method="post" class="d-flex"><img
+                            src="/<%=  food.image  %>">
+                            <input type="hidden" value="<%= food._id  %>" name="id">
+                            <input type="hidden" value="<%= food.desc  %>" name="desc">
+                            <input type="hidden"value="<%= food.price  %>" name="price">
+                            <input type="hidden"value="<%= food.name  %>" name="name">
+                            <input type="hidden"value="<%= food.image  %>" name="image">
+                        <div class="menu-content">
+                            <h5><em class="">
+                                    <%= food.name %>
+                                </em><span>
+                                    <%= food.price %>
+                                </span></h5>
+                            <p>
+                                <%= food.desc %>
+                            </p>
+                            <button type="submit" class="btn btn-dark add-cart">Add cart</button>
+                            <% if(isAdmin){ %>
+                                <button type="submit" class="btn btn-danger add-cart mt-2" formaction="/delete-cart/<%= food._id  %>" formmethod="post" >delete</button>
+                                <% } %>  
+                        </div>
+                    </form>
+                </div>
+                <% } %>
+        </div>
+    </div>
+
+</div>

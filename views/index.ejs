@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('parts/head') %>
+
+    <body>
+        <section class="col-12 p-0">
+            <%- include('parts/nav',{isUser:isUser,isAdmin:isAdmin}) %>
+            <%- include('parts/sidebar',{isUser:isUser,isAdmin:isAdmin}) %>
+                <%- include('home/home-bg') %>
+                    <section class="container-fluid parent-selections">
+                        <%- include('home/best-selection') %>
+                            <%- include('home/most-popular') %>
+                    </section>
+                    <section class="book container-fluid col-12">
+                        <%- include('home/book') %> 
+                    </section>
+                    <%- include('parts/footer') %>
+                        <%- include('parts/scriptTags') %>
+        </section>
+    </body>
+
+</html>

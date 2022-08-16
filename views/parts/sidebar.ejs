@@ -1,0 +1,28 @@
+<div class="side-bar">
+    <span class="material-icons close-icon">
+        close
+    </span>
+    <div class="side-bar-links">
+        <a href="/menu#appet"><em>appetiser</em></a>
+        <a href="/menu#breakfast" class="not-match-top"><em>breakfast</em></a>
+        <a href="/menu#dinner"><em>dinner</em></a>
+        <a href="/menu#drinks"><em>drinks</em></a>
+        <a href="/#book" class="not-match-bottom"><em>book a table</em></a>
+        <form class="">
+            <% if(isUser){ %>
+                <% if(isAdmin){ %>
+                    <button class="btn btn-outline-secondary " style="color: white ;" formaction="/admin"
+                        formmethod="get">Admin Page</button>
+                    <% } %>
+                <button class="btn btn-outline-secondary " style="color: white ;" formaction="/logout"
+                    formmethod="post">logout</button>
+                <% }else{ %>
+                    <button class="btn btn-outline-secondary " style="color: white ;" formaction="/login"
+                        formmethod="get">login</button>
+                    <button class="btn btn-outline-secondary " style="color: white ;" formaction="/register"
+                        formmethod="get">Create Account</button>
+                    <% } %>
+
+        </form>
+    </div>
+</div>
