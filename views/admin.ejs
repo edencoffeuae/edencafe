@@ -20,12 +20,20 @@
                             <input type="text" class="form-control col-12"  aria-describedby="emailHelp" name="name"  required> 
                         </div>
                         <div class="form-group col-12">
+                            <label>English Name :</label>
+                            <input type="text" class="form-control col-12"  aria-describedby="emailHelp" name="englishName"  required> 
+                        </div>
+                        <div class="form-group col-12">
                             <label>price :</label>
                             <input type="text" class="form-control col-12"  aria-describedby="emailHelp" name="price"  required> 
                         </div>
                         <div class="form-group col-12">
-                            <label>description :</label>
+                            <label>description English :</label>
                             <input type="text" class="form-control col-12"  aria-describedby="emailHelp" name="desc"  required> 
+                        </div>
+                        <div class="form-group col-12">
+                            <label>description Arabic :</label>
+                            <input type="text" class="form-control col-12"  aria-describedby="emailHelp" name="descArabic"  required> 
                         </div>
                         <div class="form-group col-12">
                             <label>image :</label>
@@ -39,6 +47,15 @@
                                 <option value="dinner">dinner</option>
                                 <option value="drinks">drinks</option>
                                 <option value="appet">appetiser</option>
+                                <option value="main">main</option>
+                                <option value="popular">most popular</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-12 category">
+                            <label>Reverse :</label>
+                            <select name="reverse" id="category" class="" required>
+                                <option value="reverse">reverse</option>
+                                <option value="false">no reverse</option>
                             </select>
                         </div>
                         <div class="form-group col-12 parentBtn">

@@ -503,7 +503,9 @@ z-index: 2;
   color: white;
   margin-top: 25px;
 }
-
+.best-selections div.reverse {
+  flex-direction: row-reverse;
+}
 @media only screen and (max-width: 600px) {
   .best-selections .best-selection-child div {
       padding: 0px 0px;
@@ -518,7 +520,7 @@ z-index: 2;
   }
 
   .best-selections .reverse {
-      flex-direction: column-reverse;
+      flex-direction: row-reverse;
   }
 
   .best-selections .best-selection-child div h2 {
@@ -553,7 +555,7 @@ z-index: 2;
   }
 
   .best-selections .reverse {
-      flex-direction: column-reverse;
+      flex-direction: row-reverse;
   }
 
   .best-selections .best-selection-child div h2 {
@@ -593,7 +595,9 @@ z-index: 2;
       padding-bottom: 20px;
 
   }
-
+  .best-selections .reverse{
+    flex-direction: row-reverse;
+  }
   .best-selections .best-selection-child div {
       height: 100%;
       display: flex;

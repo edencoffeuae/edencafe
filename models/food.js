@@ -1,12 +1,16 @@
 const mongoose = require("mongoose");
+const { type } = require("os");
 const DB =
 'mongodb+srv://eden:eden@cluster0.bqfktxm.mongodb.net/eden?retryWrites=true&w=majority';
 const menuSchema = mongoose.Schema({
   name: String,
+  englishName:String,
   price: String,
   category: String,
   desc: String,
-  image: String
+  descArabic:String,
+  image: String,
+  reverse:String
 });
 const Menu = mongoose.model("menu", menuSchema);
 

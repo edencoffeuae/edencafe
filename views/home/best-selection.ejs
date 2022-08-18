@@ -1,48 +1,44 @@
-
+<% if(main.length !==0){ %>
     <section class="container best-selections">
         <div class="title">
             <h1 class="mt-5">
                 <em>Best our menu</em>
             </h1>
         </div>
-        <div class="best-selection-child col-12">
-            <img src="/best-selections/best-selection-one.jpeg" class="col-xl-6 col-lg-6 " alt="" srcset="">
-            <div class="col-xl-6 col-lg-6 ">
-                <h2><em>Grilled salmon</em></h2>
-                <p class="desc">
-                    <em>Grilled salmon on the grill with caviar sauce</em>
-                </p>
-                <p class="price">price : <span>58DHS</span></p>
+        <% for(let food of main){ %>
+            <div class="best-selection-child col-12 <%= food.reverse  %> ">
+                <img src="/<%=  food.image  %>" class="col-xl-6 col-lg-6 " alt="" srcset="">
+                <div class="col-xl-6 col-lg-6 ">
+                    <h2><em>
+                            <%= food.englishName %>
+                        </em></h2>
+                    <p class="desc" style="font-size:25px;font-weight: 700;">
+                        <em>
+                            <%= food.desc %>
+                        </em>
+                        <br>
+                        <em class="arabic" style="font-size: 30px;">
+                            <%= food.descArabic %>
+                        </em>
+                    </p>
+                    <p class="price">price : <span>
+                            <%= food.price %>DHS
+                        </span></p>
+                    <form>
+                        <input type="hidden" value="<%= food._id  %>" name="id">
+                        <input type="hidden" value="<%= food.desc  %>" name="desc">
+                        <input type="hidden" value="<%= food.price  %>" name="price">
+                        <input type="hidden" value="<%= food.name  %>" name="name">
+                        <input type="hidden" value="<%= food.image  %>" name="image">
+                        <button type="submit" class="btn btn-dark add-cart" formaction="/add-cart/<%= food._id  %>"
+                            formmethod="post">Add cart</button>
+                        <% if(isAdmin){ %>
+                            <button type="submit" class="btn btn-danger add-cart mt-2"
+                                formaction="/delete-cart/<%= food._id  %>" formmethod="post">delete</button>
+                            <% } %>
+                    </form>
+                </div>
             </div>
-        </div>
-        <div class="best-selection-child col-12 reverse">
-            <div class="col-xl-6 col-lg-6 ">
-                <h2><em>Penne chiken pasta</em></h2>
-                <p class="desc">
-                    <em>Italian style pasta with cheese sauce</em>
-                </p>
-                <p class="price">price : <span>40DHS</span></p>
-            </div>
-            <img src="/best-selections/best-selection-two.jpeg" class="col-xl-6 col-lg-6 " alt="" srcset="">
-        </div>
-        <div class="best-selection-child col-12">
-            <img src="/best-selections/best-selection-three.jpeg" class="col-xl-6 col-lg-6" alt="" srcset="">
-            <div class="col-xl-6 col-lg-6">
-                <h2><em>Rozitto chiken</em></h2>
-                <p class="desc">
-                    <em>Risotto with special sauce the Italian way</em>
-                </p>
-                <p class="price">price : <span>45DHS</span></p>
-            </div>  
-        </div>
-        <div class="best-selection-child col-12 reverse">
-            <div class="col-xl-6 col-lg-6 ">
-                <h2><em>Fettuccine chiken pasta</em></h2>
-                <p class="desc">
-                    <em>Fettuccine with white sauce</em>
-                </p>
-                <p class="price">price : <span>40DHS</span></p>
-            </div>
-            <img src="/best-selections/best-selection-four.jpeg" class="col-xl-6 col-lg-6 " alt="" srcset="">
-        </div>
+            <% } %>
     </section>
+    <% } %>

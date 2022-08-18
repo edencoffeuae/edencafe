@@ -8,8 +8,8 @@
             <%- include('parts/sidebar',{isUser:isUser,isAdmin:isAdmin}) %>
                 <%- include('home/home-bg') %>
                     <section class="container-fluid parent-selections">
-                        <%- include('home/best-selection') %>
-                            <%- include('home/most-popular') %>
+                        <%- include('home/best-selection',{main:main}) %>
+                            <%- include('home/most-popular',{popular:popular}) %>
                     </section>
                     <section class="book container-fluid col-12">
                         <%- include('home/book') %> 
