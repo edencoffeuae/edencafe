@@ -30,10 +30,11 @@
                         <input type="hidden" value="<%= food.price  %>" name="price">
                         <input type="hidden" value="<%= food.name  %>" name="name">
                         <input type="hidden" value="<%= food.image  %>" name="image">
-                        <button type="submit" class="btn btn-dark add-cart" formaction="/add-cart/<%= food._id  %>"
+                        <button type="submit" class="btn btn-dark add-cart" style="width: auto ;" formaction="/add-cart/<%= food._id  %>"
                             formmethod="post">Add cart</button>
                         <% if(isAdmin){ %>
                             <button type="submit" class="btn btn-danger add-cart mt-2"
+                            style="width: auto ;"
                                 formaction="/delete-cart/<%= food._id  %>" formmethod="post">delete</button>
                             <% } %>
                     </form>
