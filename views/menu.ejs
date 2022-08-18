@@ -6,10 +6,10 @@
         <%- include('parts/nav') %>
             <%- include('parts/sidebar') %>
                 <%- include('home/home-bg') %>
+                    <%- include('menu/appet',{appet:appet,isAdmin:isAdmin}) %>
                     <%- include('menu/breakfast',{breakfast:breakfast,isAdmin:isAdmin}) %>
                         <%- include('menu/dinner',{dinner:dinner,isAdmin:isAdmin}) %>
                             <%- include('menu/drinks',{drinks:drinks,isAdmin:isAdmin}) %>
-                            <%- include('menu/appet',{appet:appet,isAdmin:isAdmin}) %>
                                         <%- include('parts/footer') %>
                                             <%- include('parts/scriptTags') %>
     </body>
